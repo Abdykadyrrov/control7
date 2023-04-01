@@ -19,9 +19,9 @@ public class RestaurantController {
         this.restaurantService = restaurantService;
     }
     @GetMapping("/restaurants")
-    public List<Restaurant> getRestaurants() {
+    public ResponseEntity<List<RestaurantDto>> getRestaurants() {
         List<Restaurant> restaurants = restaurantService.findAll();
         List<RestaurantDto> restaurantDtos = restaurants.stream().map(RestaurantDto::from).collect(Collectors.toList());
-        return restaurants;
+        return ResponseEntity.ok(restaurantDtos);
     }
 }
