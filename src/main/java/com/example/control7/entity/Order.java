@@ -1,5 +1,7 @@
 package com.example.control7.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,15 +11,12 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Order {
+    @Id
     private Long id;
-    private Client client;
-    private Dish dish;
+    private Long clientID;
+    private Long dishId;
     private LocalDateTime dateTime;
 
-    public Order(Client client, Dish dish, LocalDateTime dateTime) {
-        this.client = client;
-        this.dish = dish;
-        this.dateTime = dateTime;
-    }
 }
