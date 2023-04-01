@@ -29,7 +29,7 @@ public class OrderController {
         Order order = orderService.makeOrder(orderDto.getClientId(), orderDto.getDishId(),orderDto.getDateTime());
         return ResponseEntity.ok(OrderDto.from(order));
     }
-    @GetMapping("/orders/client/{id}")
+    @GetMapping("/client/{id}/orders")
     public ResponseEntity<List<OrderDto>> getOrdersByClientId(@PathVariable Long clientId) {
         List<Order> orders = orderService.findByClientId(clientId);
         List<OrderDto> orderDtos = orders.stream().map(OrderDto::from).collect(Collectors.toList());

@@ -18,7 +18,7 @@ public class ClientController {
 
     @PostMapping("/registration")
     public ResponseEntity<ClientDto> register(@RequestBody ClientDto clientDto){
-        Client client = clientService.createUser(clientDto.getName(), clientDto.getEmail());
+        Client client = clientService.createUser(clientDto.getName(), clientDto.getEmail(),clientDto.getPassword());
         return ResponseEntity.ok(ClientDto.from(client));
     }
 }

@@ -9,12 +9,12 @@ import lombok.Data;
 public class ClientDto {
     public static ClientDto from(Client client){
         return builder()
-                .id(client.getId())
                 .name(client.getName())
                 .email(client.getEmail())
+                .password(client.getPassword())
                 .build();
     }
-    private Long id;
     private String name;
     private String email;
+    private String password;
 }
