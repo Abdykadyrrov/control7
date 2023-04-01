@@ -1,5 +1,6 @@
 package com.example.control7.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -17,6 +18,12 @@ public class Order {
     private Long id;
     private Long clientID;
     private Long dishId;
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
 
+    public Order(Long clientID, Long dishId, LocalDateTime dateTime) {
+        this.clientID = clientID;
+        this.dishId = dishId;
+        this.dateTime = dateTime;
+    }
 }

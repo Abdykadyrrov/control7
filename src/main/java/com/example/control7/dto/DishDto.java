@@ -15,13 +15,13 @@ public class DishDto {
                 .name(dish.getName())
                 .type(dish.getType())
                 .price(dish.getPrice())
-                .restaurant(dish.getRestaurant())
+                .restaurantId(dish.getRestaurantId())
                 .build();
     }
     private Long id;
     private String name;
     private String type;
     private double price;
-    private Restaurant restaurant;
+    private Long restaurantId;
 
 }

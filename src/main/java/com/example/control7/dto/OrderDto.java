@@ -13,13 +13,13 @@ public class OrderDto {
     public static OrderDto from(Order order){
         return builder()
                 .id(order.getId())
-                .client(order.getClient())
-                .dish(order.getDish())
+                .clientId(order.getClientID())
+                .dishId(order.getDishId())
                 .dateTime(order.getDateTime())
                 .build();
     }
     private Long id;
-    private Client client;
-    private Dish dish;
+    private Long clientId;
+    private Long dishId;
     private LocalDateTime dateTime;
 }
